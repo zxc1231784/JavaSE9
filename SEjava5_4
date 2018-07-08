@@ -1,0 +1,51 @@
+public class SEjava5_4 {
+
+	public static void main(String[] args) {
+		char n[][] = new char[8][8];
+		for (int i = 0; i < n.length; i++) {
+			for (int j = 0; j < n[i].length; j++) {
+				n[i][j] = '.';
+				// System.out.print(n[i][j] + "\t");
+			}
+			// System.out.println();
+		}
+
+		// -------------------------------------------------------
+
+		int a = (int) (Math.random() * 8);
+		int b = (int) (Math.random() * 8);
+		int qsum = 1;
+		n[a][b] = 'Q';
+		for (int i = 1;; i++) {
+			int sum = 0;
+			a = (int) (Math.random() * 8);
+			b = (int) (Math.random() * 8);
+
+			if (n[a][b] == '.')
+				for (int k = 0; k < n.length; k++) {
+
+					if (n[a][k] == '.') {
+						sum++;
+					}
+					if (n[k][b] == '.') {
+						sum++;
+					}
+				}
+			if (sum == 16) {
+				n[a][b] = 'Q';
+				qsum++;
+			}
+			if (qsum == 8) {
+				break;
+			}
+
+		}
+		for (int i = 0; i < n.length; i++) {
+			for (int j = 0; j < n[i].length; j++) {
+				System.out.print(n[i][j] + "\t");
+			}
+			System.out.println();
+		}
+
+	}
+}
