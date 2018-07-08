@@ -1,0 +1,41 @@
+
+public class SEjava5_2_2 {
+
+	public static void main(String[] args) {
+		int a[][] = { { 2, 2, 2, 2, 2, 2, 2 }, { 0, 0, 0, 0, 0, 0, 2 }, { 2, 0, 2, 0, 2, 0, 2 },
+				{ 2, 0, 0, 2, 0, 2, 2 }, { 2, 2, 0, 2, 0, 2, 2 }, { 2, 0, 0, 0, 0, 0, 2 }, { 2, 2, 2, 2, 2, 0, 2 } };
+		int go1[] = { 1, 0 };
+		int go2[] = { 0, 1 };
+		a[1][0] = 5;
+
+		t1:for (int i = 1;;) {
+			for (int k = 0;;) {
+				for (int j = 0; j < go1.length; j++) {
+					if (a[6][5] == 5) {
+						break t1;
+					}
+					if (a[i + go1[j]][k + go2[j]] != 2) {
+						
+						
+						i = i + go1[j];
+						k = k + go2[j];
+						a[i ][k ] = 5;
+
+					}
+
+				}
+
+			}
+
+		}
+		for(int i=0;i<a.length;i++) {
+			for(int j=0;j<a[i].length;j++) {
+				System.out.print(a[i][j]+"\t");
+			}
+			System.out.println();
+			
+		}
+
+
+	}
+}
