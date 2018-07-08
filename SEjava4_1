@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class SEjava4_1 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int a;
+
+		do {
+			System.out.println("求幾的費氏函數:");
+			a = sc.nextInt();
+		} while (a < 1);
+		int sum[] = new int[a + 1];
+
+		for (int i = 1; i < sum.length; i++) {
+			sum[0] = 0;
+			if (i == 1 || i == 2) {
+				sum[i] = 1;
+			} else {
+				sum[i] = sum[i - 1] + sum[i - 2];
+
+			}
+
+		}
+
+		for (int j = 0; j < sum.length; j++) {
+			System.out.println(sum[j]);
+		}
+	}
+
+}
